@@ -1,0 +1,8 @@
+[
+    {
+        "command": "end_line",
+        "keys": [
+            "super+alt+enter"
+        ]
+    }
+]
