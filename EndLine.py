@@ -30,7 +30,8 @@ class EndLineCommand(sublime_plugin.TextCommand):
         path = os.path.join(os.path.dirname(sublime.packages_path()), self.view.settings().get('syntax'))
         language = plistlib.readPlist(path)
         endliner = EndLineCommand.find_key(language, 'punctuation.terminator')
-        if endliner is not None:
+        print endliner
+        if endliner is not None and 'match' in endliner:
             endliner = endliner['match'].replace('\\', '')
             line = self.view.line(self.view.sel()[0])
             line_content = self.view.substr(line)
